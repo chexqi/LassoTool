@@ -107,7 +107,7 @@ if __name__ == '__main__':
 	Img = cv2.imread(ImgPath, 0).astype(np.uint16)
 	data = [Datum(*xy) for xy in CenterPoints]  # 所有数据，每个点是一个类
 	fig = plt.figure()
-	ax = plt.axes(xlim=(0, Img.shape[1]), ylim=(0, Img.shape[0]), autoscale_on=False)
+	ax = plt.axes(xlim=(0, Img.shape[1]), ylim=(Img.shape[0], 0), autoscale_on=False)
 	lman = LassoManager(fig, ax, data)
 	plt.imshow(Img, 'gray')
 	plt.show()
